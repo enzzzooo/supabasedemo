@@ -2,16 +2,8 @@
 
   export default async function Notes() {
     const supabase = createClient();
-    // const { data: notes } = await supabase.from("notes").select();
-    const { data, error } = await supabase
-    .from('notes')
-    .select();
-
-    if (error) {
-        console.error('Error fetching data:', error);
-        return;
-      }
-    console.log(data);
-    return <div>{ JSON.stringify(data)}</div>; 
+    const { data: notes } = await supabase.from("notes").select();
+    console.log(notes);
+    return <pre>{ JSON.stringify(notes, null, 2)}</pre>; 
     
   }
