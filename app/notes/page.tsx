@@ -3,7 +3,17 @@
   export default async function Notes() {
     const supabase = createClient();
     const { data: notes } = await supabase.from("notes").select();
-    console.log(notes);
-    return <pre>{ JSON.stringify(notes, null, 2)}</pre>; 
-    
+  
+    // display notes
+    return (
+      <div>
+        {notes && notes.map((note) => (
+          <div key={note.id}>
+            <h2>{note.title}</h2>
+            <p>{note.content}</p>
+          </div>
+        ))}
+      </div>
+    );
   }
+  
