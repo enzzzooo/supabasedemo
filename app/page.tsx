@@ -26,7 +26,7 @@ export default async function Index() {
         <p>
           Powered by{" "}
           <a
-            href="google.com"
+            href="https://google.com"
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"
