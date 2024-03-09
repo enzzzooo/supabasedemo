@@ -11,6 +11,7 @@ export default function Page() {
       const { data } = await supabase.from('notes').select()
       setNotes(data)
     }
+    
     getData()
   }, [])
 

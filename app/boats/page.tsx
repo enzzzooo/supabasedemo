@@ -14,7 +14,7 @@ const json = {
       <pre>{JSON.stringify(json, null, 2)}</pre>
     );
   };
-  return (<> <PrettyJson /> <div>hi</div>
+  return (<> <PrettyJson />
   </>
   );
 }
