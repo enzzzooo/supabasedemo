@@ -7,7 +7,7 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "My Next.js and Supabase Starter Kit",
+  title: "Supabase Demo",
   description: "Web App",
 };
 
