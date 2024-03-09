@@ -5,7 +5,7 @@ export default async function Coats() {
 
     return (
         <> 
-            {coats && coats.map((coats) => <div key={coats.id} className="text-black "> {coats.nombre} </div>)}
+            {coats && coats.map((coats) => <div key={coats.id} className="text-emerald-600  "> {coats.nombre} </div>)}
         </>
     );
 }
