@@ -8,7 +8,7 @@ export default function Page() {
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await supabase.from('notes').select()
+      const { data, error } = await supabase.from('notes').select()
       setNotes(data)
     }
     
