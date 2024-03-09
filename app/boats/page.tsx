@@ -1,20 +1,13 @@
 import { createClient } from '@/utils/supabase/server';
-
+// one way to fetch data using server
 export default async function Notes() {
   const supabase = createClient();
   const { data: notes } = await supabase.from("notes").select();
-const json = {
-    "name": "John Doe",
-    "age": 32,
-    "email": "johndoe@example.com"
-  };
   
-  const PrettyJson = () => {
+  const PrettyJson = () =>{
     return (
-      <pre>{JSON.stringify(json, null, 2)}</pre>
+      <pre>{JSON.stringify(notes, null, 2)}</pre>
     );
   };
-  return (<> <PrettyJson />
-  </>
-  );
+  return <PrettyJson />
 }
