@@ -18,7 +18,7 @@ export default async function page() {
   }
   return(
     <>
-    {posts && posts.map((post) => <div key={post.title}> {post.text} </div>)}
+    {posts && posts.map((post) => <div key={post.id}> <h1>{post.title}</h1><p>{post.text} </p></div>)}
     </>
   )
 }
