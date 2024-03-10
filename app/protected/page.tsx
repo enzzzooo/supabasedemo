@@ -18,8 +18,8 @@ export default async function ProtectedPage() {
 
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
-      <div className="w-full">
-        <div className="py-6 font-bold bg-purple-900 text-center">
+      <div className="w-full"> {/* for what ever reason, bg-gradient-to[direction] is needed */}
+        <div className="py-6 font-bold bg-gradient-to-r from-purple-900 via-purple-700 via-50%  to-purple-800 text-center">
           This is a protected page that you can only see as an authenticated
           user
         </div>
