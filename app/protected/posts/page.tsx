@@ -18,7 +18,11 @@ export default async function page() {
   }
   return(
     <>
-    {posts && posts.map((post) => <div key={post.id}> <h1>{post.title}</h1><p>{post.text} </p></div>)}
+    {posts && posts.map((post) => 
+    <div key={post.id}>
+      <h1 className="text-2xl font-bold mb-2">{post.title}</h1>
+      <p>{post.text} </p>
+    </div>)}
     </>
   )
 }
