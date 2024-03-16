@@ -1,5 +1,6 @@
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from "next/navigation";
+import Link from 'next/link';
 // one way to fetch data using server
 export default async function page() {
   const supabase = createClient();
@@ -17,6 +18,8 @@ export default async function page() {
   
   }
   return(
+    <>
+    <Link href="/protected/uploadpost" className="text-blue-500">Upload Posts </Link>
     <div className="grid grid-rows-4 grid-flow-col gap-4">
       {posts && posts.map((post) => 
       <div key={post.id}>
@@ -24,6 +27,7 @@ export default async function page() {
         <p>{post.text} </p>
       </div>)}
     </div>
+    </>
   )
 }
   

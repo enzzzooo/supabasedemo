@@ -1,28 +1,24 @@
-import AuthButton from "../components/AuthButton";
-
-export default async function Index() {
+import Link from 'next/link';
+import ParentButton1 from "./ParentButton1";
+export default async function page() {
 
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center">
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-          Rarww "my site"
-          <AuthButton />
-        </div>
-      </nav>
-
+{/* main */}
       <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3">
-        "Header"
-        <main className="flex-1 flex flex-col gap-6">
-          <h2 className="font-bold text-4xl mb-4 text-center">Sup base</h2>
+        <main className="flex-1 flex flex-col gap-6 text-center">
+          <p>The counters should update together, click them to find out</p>
+            <ParentButton1 />
+          <h2 className="font-bold text-4xl mb-4">Sup base</h2>
+          <Link href="/protected/" className='hover:text-gray-700'>Go to the Vault</Link>
         </main>
       </div>
-
+{/* footer */}
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
         <p>
           Powered by{" "}
           <a
-            href="https://google.com"
+            href="#"
             target="_blank"
             className="font-bold hover:underline"
             rel="noreferrer"
