@@ -1,19 +1,20 @@
 'use client'
 import {useState} from 'react';
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/client";
 import Link from 'next/link'
 import { redirect } from 'next/navigation';
 export default function page(){
 // stuck in that, i need an async component to use the server
 // but i need to use the client to use the state
+//  make createClient from "@/utils/supabase/client"
     const client = async () => {
         const supabase = createClient();
         const {data: { user },} = await supabase.auth.getUser();
-
-  if (!user) {
-    return redirect("/login"); // uses nextjs function
-  }
+        if (!user) {
+            return redirect("/login"); // uses nextjs function
+        }
     }
+    
     function handleClick() {
         console.log("increment like count")
       }
