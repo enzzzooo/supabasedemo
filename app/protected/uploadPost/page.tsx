@@ -2,7 +2,8 @@
 import {useState} from 'react';
 import Link from 'next/link'
 export default function page(){
-
+// stuck in that, i need an async component to use the server
+// but i need to use the client to use the state
     function handleClick() {
         console.log("increment like count")
       }
