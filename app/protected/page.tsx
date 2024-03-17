@@ -1,6 +1,4 @@
 import { createClient } from "@/utils/supabase/server";
-import FetchDataSteps from "@/components/tutorial/FetchDataSteps";
-import Header from "@/components/Header";
 import { redirect } from "next/navigation";
 import Link from 'next/link';
 
@@ -15,36 +13,6 @@ export default async function ProtectedPage() {
     return redirect("/login");
   }
 
-  return (
-    <div className="flex-1 w-full flex flex-col gap-20 items-center">
-                    {/* for what ever reason, bg-gradient-to[direction] is needed */}
-        <div className=" w-full py-6 font-bold bg-gradient-to-r from-purple-900 via-purple-700 via-50%  to-purple-800 text-center">
-          This is a protected page that you can only see as an authenticated
-          user
-        </div>
-
-      <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3 ">
-        <Link href="protected/posts/" className="text-blue-600 text-center hover:text-blue-500">Go to Posts </Link>
-        <Header />
-        <main className="flex-1 flex flex-col gap-6">
-          <h2 className="font-bold text-4xl mb-4">Next steps</h2>
-          <FetchDataSteps />
-        </main>
-      </div>
-
-      <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
-        <p>
-          Powered by{" "}
-          <a
-            href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-            target="_blank"
-            className="font-bold hover:underline"
-            rel="noreferrer"
-          >
-            Supabase
-          </a>
-        </p>
-      </footer>
-    </div>
+  return (null
   );
 }

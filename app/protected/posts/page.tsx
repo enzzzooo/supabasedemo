@@ -1,21 +1,23 @@
 import { createClient } from '@/utils/supabase/server';
+// server not client this time
 import { redirect } from "next/navigation";
 import Link from 'next/link';
-// one way to fetch data using server
 export default async function page() {
   const supabase = createClient();
   
   // authentication
-  const {data: { user },} = await supabase.auth.getUser();
+  const {data: { user }, error: authError} = await supabase.auth.getUser();
 
-  if (!user) {
+  if (!user || authError) {
     return redirect("/login"); // uses nextjs function
   }
+
+
   // data fetch and display
-  let { data: posts, error } = await supabase.from('posts').select();
-  if (error){
-    return <div>Error: {String(error)}</div>
-  
+  let { data: posts, error: fetchError } = await supabase.from('posts').select();
+  if (fetchError){
+    return <div>Error: {String(fetchError)}</div>
+  // error (which is returned by .select() ) is set to name: fetchError
   }
   return(
     <>
