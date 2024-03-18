@@ -15,6 +15,7 @@ export default function RealtimePosts({ serverPosts }: { serverPosts: any }) {
   useEffect(() => {
     const channel = supabase
       .channel('*')
+      // updates automatically without browser refresh
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'uno' }, (payload) =>
         setUno((uno: any) => [...uno, payload.new])
       )

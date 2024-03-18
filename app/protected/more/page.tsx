@@ -13,6 +13,6 @@ export default function Page() {
     }
     getData()
   }, [])
-
+// compare to 'unomas', this doesn't update automatically when data in db is changed
   return <pre>{JSON.stringify(notes, null, 2)}</pre>
 }
