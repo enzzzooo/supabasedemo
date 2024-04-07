@@ -4,7 +4,7 @@ export default async function Notes() {
   const supabase = createClient();
 
   
-let { data: pagas, error } = await supabase
+let { data: pagas } = await supabase
 .from('pagas')
 .select('*')
         
